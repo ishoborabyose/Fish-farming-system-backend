@@ -1,7 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import userRoute from './routes/userRoute';
-import db from './db/models/index';
+import userRoute from './src/routes/userRoute';
+import db from './src/db/models/index';
 
 dotenv.config();
 const bodyParser = require('body-parser');

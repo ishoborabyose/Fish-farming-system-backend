@@ -42,6 +42,7 @@ class UserController {
             user
         });
     } catch (error) {
+        console.log(error)
         return res.status(500).json({
             message: 'something went wrong',
             error
