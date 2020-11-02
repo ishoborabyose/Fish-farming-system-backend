@@ -1,4 +1,4 @@
- import getId from '../helpers/userdata';
+
 import { Sensor} from '../db/models';
 
 
@@ -7,14 +7,14 @@ class SensorController {
 
     static async createSensor (req,res) { 
 
-        const  userId =  getId(req.header('token'));
+        
 
         try {
             const {
                 Name, phSensor, oxygenSensor, temperatureSensor
             } = req.query;
             const newSensor = {
-               Name, phSensor, oxygenSensor, temperatureSensor, userId
+               Name, phSensor, oxygenSensor, temperatureSensor
             };
     
           const sensor = await Sensor.create(newSensor);
@@ -23,7 +23,6 @@ class SensorController {
                 sensor
             });
         } catch (error) {
-            console.log(error)
             return res.status(500).json({
                 message: 'something went wrong',
                 error
