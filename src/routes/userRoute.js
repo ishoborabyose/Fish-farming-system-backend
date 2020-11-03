@@ -14,7 +14,7 @@ router.get('/fuck/v2',  usersTestDb.getUserByEmail);
 router.post('/user/v2', validatesignup, usersTestDb.createUser);
 router.post('/login/v2', validatesignin, usersTestDb.logIn);
 router.post('/sensor/v1',sensor.createSensor);
-router.post('/sensor/v2', sensor2.createSensor);
+router.get('/sensor/v2', sensor2.createSensor);
 router.get('/sensor/v1/:id', sensor.getOne);
 router.get('/sensor/v2/:id',sensor2.getOne);
 router.get('/sensor/v1', sensor.getAll);
