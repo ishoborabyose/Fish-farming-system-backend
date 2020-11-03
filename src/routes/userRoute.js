@@ -18,7 +18,7 @@ router.get('/sensor/v2', sensor2.createSensor);
 router.get('/sensor/v1/:id', sensor.getOne);
 router.get('/sensor/v2/:id',sensor2.getOne);
 router.get('/sensor/v1', sensor.getAll);
-router.get('/sensor/v2', sensor2.getAll);
+router.get('/sensors/v2', sensor2.getAll);
 
 
 export default router;
