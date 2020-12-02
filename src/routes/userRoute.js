@@ -21,4 +21,5 @@ router.get('/sensor/v1', sensor.getAll);
 router.get('/sensors/v2', sensor2.getAll);
 
 
+
 export default router;

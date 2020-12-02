@@ -2,16 +2,20 @@ import express from 'express';
 import dotenv from 'dotenv';
 import userRoute from './src/routes/userRoute';
 import db from './src/db/models/index';
+import cors from 'cors';
 
 dotenv.config();
+
 const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 4000;
+app.use(cors());
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 app.use('/api', userRoute);
+
 
 app.get('/', (req, res) => res.send('server is On'));
 app.use((req, res) => {
