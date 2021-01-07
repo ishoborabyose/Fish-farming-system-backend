@@ -66,6 +66,29 @@ class SensorController {
     })
   }
 
+  static async getOrder(req, res){
+ const sensorByOrder =  await Sensor.findAll({
+         order: [
+             ['id', 'DESC']
+         ],
+         attributes: ['id', 'Name', 'phSensor', 'oxygenSensor', 'temperatureSensor']
+     });
+     if(!sensorByOrder) {
+        return res.status(404).json({
+            status:404,
+            error: 'Sensors  not found'
+        });
+
+    }
+    return res.status(200).json({
+        status: 200,
+        data: {
+            sensorByOrder,
+        }
+    })
+  }
+  
+
 //   static getById(req, res){
       
 //       const found = Sensor.findAll({

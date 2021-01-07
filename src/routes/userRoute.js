@@ -19,6 +19,7 @@ router.get('/sensor/v1/:id', sensor.getOne);
 router.get('/sensor/v2/:id',sensor2.getOne);
 router.get('/sensor/v1', sensor.getAll);
 router.get('/sensors/v2', sensor2.getAll);
+router.get('/descend/v2', sensor2.getOrder);
 
 
 
