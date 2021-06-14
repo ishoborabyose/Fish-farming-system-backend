@@ -10,6 +10,11 @@ module.exports = {
     database: process.env.DB_NAME,
     host: process.env.DB_HOST,
     dialect: 'postgres',
+    dialectOptions: {
+      ssl: {
+        rejectUnauthorized: false, // very important
+      }
+    },
     logging: false,
     seederStorage: 'sequelize'
   },
@@ -19,6 +24,11 @@ module.exports = {
     database: process.env.DB_NAME_TEST,
     host: process.env.DB_HOST,
     dialect: 'postgres',
+    dialectOptions: {
+      ssl: {
+        rejectUnauthorized: false, // very important
+      }
+    },
     logging: false,
     seederStorage: 'sequelize'
   },
@@ -28,6 +38,11 @@ module.exports = {
     use_env_variable: 'DATABASE_URL',
     url: process.env.DATABASE_URL,
     dialect: 'postgres',
+    dialectOptions: {
+      ssl: {
+        rejectUnauthorized: false, // very important
+      }
+    },
     logging: false,
     seederStorage: 'sequelize'
   }
